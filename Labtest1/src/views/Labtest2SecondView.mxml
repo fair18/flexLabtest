@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="Labtest2SecondView">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			private function onclick_btn_back(event:MouseEvent):void {
+				navigator.popView();
+			}
+			
+			private var logArrays:Array = [];
+			
+			[Bindable]
+			private var loginsArray:ArrayCollection = new ArrayCollection(logArrays);
+			
+			protected function onclick_btn_add(e:MouseEvent):void {
+				var login = getLogin.text;
+				loginsArray.addItem(login);
+			} 
+		]]>
+	</fx:Script>
+		<s:VGroup width="100%" height="100%" horizontalAlign="center" >
+			<s:Label id="getLogin" text="{data.name}" width="100%" textAlign="center"/>
+			<s:HGroup width="100%" horizontalAlign="center">
+				<s:Button id="btn_back" label="Back" click="onclick_btn_back(event)" width="50%"/>
+				<s:Button id="btn_add" label="Add" width="50%" click="onclick_btn_add(event)"/>
+			</s:HGroup>
+			<s:List width="100%" height="100%" labelField="label" dataProvider="{loginsArray}">
+				
+			</s:List>
+		</s:VGroup>
+</s:View>

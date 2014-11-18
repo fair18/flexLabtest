@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="HomeView">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			protected function btn_click(e:MouseEvent):void {
+				var x:Object=new Object();
+				x.name=edtxt1.text;;
+				navigator.pushView(Labtest2SecondView,x);
+			} 
+		]]>
+	</fx:Script>
+	
+	<s:VGroup width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+		<s:Label id="lb1" text="Autorization"/>
+		<s:Panel id="btnPanel" visible="true" width="90%" height="30%" includeInLayout="true"
+				 title="Autorization">
+			<s:layout>
+				<s:HorizontalLayout gap="10" horizontalAlign="center" verticalAlign="middle" />
+			</s:layout>
+			<s:HGroup width="100%" height="5%" verticalAlign="middle">
+				<s:Label text="Login" width="30%" 
+						 textAlign="center" />
+				<s:TextInput id="edtxt1" width="65%"/>	
+			</s:HGroup>
+			<s:Button id="btn1" label="Login" click="btn_click(event)"/>
+		</s:Panel>
+	</s:VGroup>
+</s:View>
