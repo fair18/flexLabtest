@@ -11,8 +11,7 @@ flexLabtest
 
     1. The name of your application at the top (center this label) 
     2. A panel UI component that is located below the application name
-    3. The panel should contain one text input for username, a label associated to the text input and a
-“Login” button.
+    3. The panel should contain one text input for username, a label associated to the text input and a “Login” button.
 
 <b>Login Button:</b>
     1. When the login button is clicked the app should call the pushView() method with the appropriate
